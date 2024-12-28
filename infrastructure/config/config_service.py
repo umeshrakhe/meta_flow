@@ -10,7 +10,8 @@ class ConfigService(ABC):
     def get_transformation_rules(self) -> dict:
         """Fetches transformation rules from the configuration source."""
         pass
-
+    
+    @abstractmethod
     def get_file_metadata(self, file_key: str) -> dict:
         """
         Fetches file/database metadata based on the provided key.
@@ -22,6 +23,7 @@ class ConfigService(ABC):
             A dictionary containing the metadata (input_file_path, output_file_path, 
             validation_rules, transformation_rules, etc.).
         """
+        pass
         # ... implementation to fetch metadata based on file_key ...
 
 class DatabaseConfigService(ConfigService):
@@ -47,3 +49,15 @@ class FileConfigService(ConfigService):
     def get_transformation_rules(self) -> dict:
         # Logic to read transformation rules from the configuration file
         pass
+
+    def get_file_metadata(self, file_key: str) -> dict:
+        """
+        Fetches file/database metadata based on the provided key.
+
+        Args:
+            file_key: The key identifying the file/database metadata.
+
+        Returns:
+            A dictionary containing the metadata (input_file_path, output_file_path, 
+            validation_rules, transformation_rules, etc.).
+        """

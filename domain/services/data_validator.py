@@ -1,3 +1,6 @@
+from infrastructure.config.config_service import ConfigService
+
+
 class DataValidator:
     def __init__(self, config_service: ConfigService):
         self.config_service = config_service

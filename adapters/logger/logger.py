@@ -13,6 +13,7 @@ class FileLogger(Logger):
     def log(self, message: str, level: str = 'INFO') -> None:
         # ... implementation for logging to a file ...
 
+
 class DatabaseLogger(Logger):
     def __init__(self, db_connection):
         self.db_connection = db_connection
